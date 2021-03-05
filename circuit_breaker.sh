@@ -27,13 +27,11 @@ function open_state () {
     echo "Total delay: ${total_delay}"
     
     if [[ $counter > 10 && $counter < 16 ]]; then
-        echo "1"
-        sleep_time=${RANDOM:0:1}
-    elif [[ $counter > 15 ]]; then
-        echo "2"
         sleep_time=${RANDOM:0:2}
+    elif [[ $counter > 15 ]]; then
+        sleep_time=${RANDOM:0:3}
     else
-        echo "3"
+        :
     fi
     sleep $sleep_time
     half_open
